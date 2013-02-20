@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @scribbling.body %>
+</p>
+
+<p>
+  <b>Witch:</b>
+  <%= Witch.find(@scribbling.witch_id).witch_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_scribbling_path(@scribbling) %> |
+<%= link_to 'Back', scribblings_path %>

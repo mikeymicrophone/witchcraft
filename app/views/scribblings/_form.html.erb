@@ -1,0 +1,25 @@
+<%= form_for(@scribbling) do |f| %>
+  <% if @scribbling.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scribbling.errors.count, "error") %> prohibited this scribbling from being saved:</h2>
+
+      <ul>
+      <% @scribbling.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :witch_id %><br />
+    <%= f.select :witch_id, options_from_collection_for_select(Witch.all, :id, :witch_name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

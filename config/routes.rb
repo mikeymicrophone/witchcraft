@@ -1,4 +1,7 @@
 Witchcraft::Application.routes.draw do
+  resources :scribblings
+
+
   resources :witches
 
 
