@@ -4,8 +4,6 @@
   <tr>
     <th>Witch name</th>
     <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,11 +13,8 @@
   <tr>
     <td><%= witch.witch_name %></td>
     <td><%= witch.first_name %></td>
-    <td><%= witch.last_name %></td>
-    <td><%= witch.email %></td>
     <td><%= link_to 'Show', witch %></td>
-    <td><%= link_to 'Edit', edit_witch_path(witch) %></td>
-    <td><%= link_to 'Destroy', witch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Morph', edit_witch_path(witch) %></td>
   </tr>
 <% end %>
 </table>
