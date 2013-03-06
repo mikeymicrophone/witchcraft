@@ -5,11 +5,12 @@
   <%= @scribbling.body %>
 </p>
 
-<p>
-  <b>Witch:</b>
-  <%= Witch.find(@scribbling.witch_id).witch_name %>
-</p>
-
+<% if @scribbling.witch_id %>
+  <p>
+    <b>Witch:</b>
+    <%= Witch.find(@scribbling.witch_id).witch_name %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_scribbling_path(@scribbling) %> |
 <%= link_to 'Back', scribblings_path %>

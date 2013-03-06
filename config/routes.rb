@@ -1,4 +1,10 @@
 Witchcraft::Application.routes.draw do
+  resources :stitches
+
+
+  resources :scrolls
+
+
   resources :scribblings
 
 

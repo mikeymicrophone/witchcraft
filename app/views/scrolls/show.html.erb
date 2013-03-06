@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @scroll.title %>
+</p>
+
+<ul>
+  <% @scroll.scribblings.each do |scribbling| %>
+    <li>
+      <%= link_to(scribbling.id, scribbling_path(scribbling.id)) %>
+      <%= scribbling.body %>
+    </li>
+  <% end %>
+</ul>
+<div>
+  <%= link_to 'Stitch on this scroll.', new_stitch_path(:scroll_id => @scroll.id) %>
+</div>
+
+<%= link_to 'Edit', edit_scroll_path(@scroll) %> |
+<%= link_to 'Back', scrolls_path %>

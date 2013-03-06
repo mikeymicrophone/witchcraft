@@ -1,0 +1,30 @@
+<%= form_for(@stitch) do |f| %>
+  <% if @stitch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stitch.errors.count, "error") %> prohibited this stitch from being saved:</h2>
+
+      <ul>
+      <% @stitch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <% if @stitch.scroll %>
+    <%= f.hidden_field :scroll_id %>
+  <% else %>
+    <div class="field">
+      <%= f.label :scroll_id %><br />
+      <%= f.number_field :scroll_id %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :scribbling_id %><br />
+    <%= f.select :scribbling_id, options_from_collection_for_select(Scribbling.all, :id, :body) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

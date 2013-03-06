@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scroll:</b>
+  <%= @stitch.scroll_id %>
+</p>
+
+<p>
+  <b>Scribbling:</b>
+  <%= @stitch.scribbling_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_stitch_path(@stitch) %> |
+<%= link_to 'Back', stitches_path %>
