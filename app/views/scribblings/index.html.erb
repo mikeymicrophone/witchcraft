@@ -15,7 +15,6 @@
     <td><%= Witch.find(scribbling.witch_id).witch_name if scribbling.witch_id? %></td>
     <td><%= link_to 'Show', scribbling %></td>
     <td><%= link_to 'Edit', edit_scribbling_path(scribbling) %></td>
-    <td><%= link_to 'Destroy', scribbling, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
